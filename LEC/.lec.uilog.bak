@@ -1,0 +1,872 @@
+#Version: 23.10-s300 (30-Aug-2023) (64 bit executable)
+#Gui Step(131)===>Menubutton .v_menu.read <Motion> {}
+     tk::MbMotion .v_menu.read up 26 50
+#Gui Step(132)===>Menubutton .v_menu.read <Leave> {}
+     tk::MbLeave .v_menu.read
+#Gui Step(133)===>Menu .v_menu.read.menu <Enter> {}
+     set tk::Priv(window) .v_menu.read.menu
+    if {[.v_menu.read.menu cget -type] eq "tearoff"} {
+	if {"NotifyNormal" ne "NotifyUngrab"} {
+	    if {[tk windowingsystem] eq "x11"} {
+		tk_menuSetFocus .v_menu.read.menu
+	    }
+	}
+    }
+    tk::MenuMotion .v_menu.read.menu 28 1 0
+#Gui Step(134)===>Menu .v_menu.read.menu <Button> {menu-item {Do Dofile} {Frame .v_menu .v_menu.read.menu 1}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 134:  (Menu) <Button>\
+ menu-item {Do Dofile} {Frame .v_menu .v_menu.read.menu 1}} .v_menu.read.menu } 
+set x [guiGetMenuX .v_menu.read.menu 1];set y [guiGetMenuY .v_menu.read.menu 1 ] 
+     tk::MenuMotion .v_menu.read.menu $x $y 0
+     tk::MenuButtonDown .v_menu.read.menu
+#Gui Step(135)===>Menu .v_menu.read.menu <ButtonRelease> {menu-item {Do Dofile} {Frame .v_menu .v_menu.read.menu 1}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 135:  (Menu) <ButtonRelease>\
+ menu-item {Do Dofile} {Frame .v_menu .v_menu.read.menu 1}} .v_menu.read.menu } 
+    tk::MenuInvoke .v_menu.read.menu 1
+#Gui Step(136)===>TixComboBox .fselect.fsbox.lf.types <Configure> {4 208 380 45}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 136:  (TixComboBox) <Configure>\
+ 4 208 380 45} .fselect.fsbox.lf.types } 
+_tixRecordFlags <Configure> % 9350 00000000 ?? ?? ?? ?? 45 ?? ?? 0 ?? ?? ?? 380 4 208 ?? 0 0 ?? ?? ?? ?? 22 .fselect.fsbox.lf.types ?? ??; 
+	tixWidgetDoWhenIdle tixComboBox:align .fselect.fsbox.lf.types
+    ; _tixDeleteFlags;
+#Gui Step(137)===>TixComboBox .fselect.fsbox.lf.pane.1.dir <Configure> {5 3 190 45}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 137:  (TixComboBox) <Configure>\
+ 5 3 190 45} .fselect.fsbox.lf.pane.1.dir } 
+_tixRecordFlags <Configure> % 9466 00000000 ?? ?? ?? ?? 45 ?? ?? 0 ?? ?? ?? 190 5 3 ?? 0 0 ?? ?? ?? ?? 22 .fselect.fsbox.lf.pane.1.dir ?? ??; 
+	tixWidgetDoWhenIdle tixComboBox:align .fselect.fsbox.lf.pane.1.dir
+    ; _tixDeleteFlags;
+#Gui Step(138)===>TixComboBox .fselect.fsbox.lf.pane.2.file <Configure> {5 3 170 45}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 138:  (TixComboBox) <Configure>\
+ 5 3 170 45} .fselect.fsbox.lf.pane.2.file } 
+_tixRecordFlags <Configure> % 9502 00000000 ?? ?? ?? ?? 45 ?? ?? 0 ?? ?? ?? 170 5 3 ?? 0 0 ?? ?? ?? ?? 22 .fselect.fsbox.lf.pane.2.file ?? ??; 
+	tixWidgetDoWhenIdle tixComboBox:align .fselect.fsbox.lf.pane.2.file
+    ; _tixDeleteFlags;
+#Gui Step(139)===>Button .icon.modelmgr <Enter> {}
+         if { [ .icon.modelmgr cget -state ] == "normal" } {
+            .icon.modelmgr configure -relief groove
+        }
+    
+#Gui Step(140)===>Button .icon.modelmgr <Enter> {}
+     tk::ButtonEnter .icon.modelmgr
+#Gui Step(141)===>Tk . <Configure> {0 23 1536 801}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 141:  (Tk) <Configure>\
+ 0 23 1536 801} . } 
+ guiWinConfig . 1536 801 0 23 
+#Gui Step(142)===>Tk . <Configure> {0 23 1536 801}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 142:  (Tk) <Configure>\
+ 0 23 1536 801} . } 
+ guiWinConfig . 1536 801 0 23 
+#Gui Step(143)===>Tk . <Configure> {0 23 1536 801}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 143:  (Tk) <Configure>\
+ 0 23 1536 801} . } 
+ guiWinConfig . 1536 801 0 23 
+#Gui Step(144)===>Tk . <Configure> {0 23 1536 801}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 144:  (Tk) <Configure>\
+ 0 23 1536 801} . } 
+ guiWinConfig . 1536 801 0 23 
+#Gui Step(145)===>TixExFileSelectDialog .fselect <Configure> {528 228 480 255}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 145:  (TixExFileSelectDialog) <Configure>\
+ 528 228 480 255} .fselect } 
+ guiWinConfig .fselect 480 255 528 228 
+#Gui Step(146)===>Button .icon.modelmgr <Leave> {}
+ .icon.modelmgr configure -relief flat 
+#Gui Step(147)===>Button .icon.modelmgr <Leave> {}
+     tk::ButtonLeave .icon.modelmgr
+#Gui Step(148)===>TixHList .a.pane.f1.middle.nb.nbframe.hier.golden.fm.tree.f1.hlist <Leave> {}
+callback Gui_hlist_leave .a.pane.f1.middle.nb.nbframe.hier.golden.fm.tree.f1.hlist
+#Gui Step(149)===>Listbox .fselect.fsbox.lf.pane.2.filelist.listbox <Button-1> {}
+_tixRecordFlags <1> % 10311 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 0 812593 ?? 14 23 ?? ?? 0 ?? ?? 0x0000f3 00000000 4 .fselect.fsbox.lf.pane.2.filelist.listbox 751 307; 
+	if {[set [tixGetMegaWidget .fselect.fsbox.lf.pane.2.filelist.listbox](-state)] eq "disabled"} {
+	    break
+	}
+    ; _tixDeleteFlags;
+#Gui Step(150)===>Listbox .fselect.fsbox.lf.pane.2.filelist.listbox <Button-1> {}
+set x [guiGetListBoxEntryX .fselect.fsbox.lf.pane.2.filelist.listbox 1];set y [guiGetListBoxEntryY .fselect.fsbox.lf.pane.2.filelist.listbox 1] 
+     if {[winfo exists .fselect.fsbox.lf.pane.2.filelist.listbox]} {
+	tk::ListboxBeginSelect .fselect.fsbox.lf.pane.2.filelist.listbox [.fselect.fsbox.lf.pane.2.filelist.listbox index  @$x,$y] 1
+    }
+#Gui Step(151)===>Listbox .fselect.fsbox.lf.pane.2.filelist.listbox <Button-1> FFT.do
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 151:  (Listbox) <Button-1>\
+ FFT.do} .fselect.fsbox.lf.pane.2.filelist.listbox } 
+_tixRecordFlags <1> % 10311 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 0 812593 ?? 14 23 ?? ?? 0 ?? ?? 0x0000f3 00000000 4 .fselect.fsbox.lf.pane.2.filelist.listbox 751 307; 
+	if {[string is true -strict [.fselect.fsbox.lf.pane.2.filelist.listbox cget -takefocus]]} {
+	    focus .fselect.fsbox.lf.pane.2.filelist.listbox
+	}
+	tixScrolledListBox:Browse [tixGetMegaWidget .fselect.fsbox.lf.pane.2.filelist.listbox]
+    ; _tixDeleteFlags;
+#Gui Step(152)===>TixScrolledListBox .fselect.fsbox.lf.pane.2.filelist <FocusIn> {}
+focus .fselect.fsbox.lf.pane.2.filelist.listbox
+#Gui Step(153)===>Listbox .fselect.fsbox.lf.pane.2.filelist.listbox <ButtonRelease-1> FFT.do
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 153:  (Listbox) <ButtonRelease-1>\
+ FFT.do} .fselect.fsbox.lf.pane.2.filelist.listbox } 
+_tixRecordFlags <ButtonRelease-1> % 10313 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 256 812671 ?? 14 23 ?? ?? 0 ?? ?? 0x0000f3 00000000 5 .fselect.fsbox.lf.pane.2.filelist.listbox 751 307; 
+	if {[set [tixGetMegaWidget .fselect.fsbox.lf.pane.2.filelist.listbox](-state)] eq "disabled"} {
+	    break
+	}
+    ; _tixDeleteFlags;
+#Gui Step(154)===>Listbox .fselect.fsbox.lf.pane.2.filelist.listbox <ButtonRelease-1> FFT.do
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 154:  (Listbox) <ButtonRelease-1>\
+ FFT.do} .fselect.fsbox.lf.pane.2.filelist.listbox } 
+     tk::CancelRepeat
+    .fselect.fsbox.lf.pane.2.filelist.listbox activate @14,23
+#Gui Step(155)===>Listbox .fselect.fsbox.lf.pane.2.filelist.listbox <ButtonRelease-1> FFT.do
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 155:  (Listbox) <ButtonRelease-1>\
+ FFT.do} .fselect.fsbox.lf.pane.2.filelist.listbox } 
+_tixRecordFlags <ButtonRelease-1> % 10313 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 256 812671 ?? 14 23 ?? ?? 0 ?? ?? 0x0000f3 00000000 5 .fselect.fsbox.lf.pane.2.filelist.listbox 751 307; 
+	tixScrolledListBox:Browse [tixGetMegaWidget .fselect.fsbox.lf.pane.2.filelist.listbox]
+    ; _tixDeleteFlags;
+#Gui Step(156)===>Listbox .fselect.fsbox.lf.pane.2.filelist.listbox <Button-1> FFT.do
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 156:  (Listbox) <Button-1>\
+ FFT.do} .fselect.fsbox.lf.pane.2.filelist.listbox } 
+_tixRecordFlags <1> % 10375 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 0 813937 ?? 14 23 ?? ?? 0 ?? ?? 0x0000f3 00000000 4 .fselect.fsbox.lf.pane.2.filelist.listbox 751 307; 
+	if {[set [tixGetMegaWidget .fselect.fsbox.lf.pane.2.filelist.listbox](-state)] eq "disabled"} {
+	    break
+	}
+    ; _tixDeleteFlags;
+#Gui Step(157)===>Listbox .fselect.fsbox.lf.pane.2.filelist.listbox <Button-1> FFT.do
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 157:  (Listbox) <Button-1>\
+ FFT.do} .fselect.fsbox.lf.pane.2.filelist.listbox } 
+set x [guiGetListBoxEntryX .fselect.fsbox.lf.pane.2.filelist.listbox 1];set y [guiGetListBoxEntryY .fselect.fsbox.lf.pane.2.filelist.listbox 1] 
+     if {[winfo exists .fselect.fsbox.lf.pane.2.filelist.listbox]} {
+	tk::ListboxBeginSelect .fselect.fsbox.lf.pane.2.filelist.listbox [.fselect.fsbox.lf.pane.2.filelist.listbox index  @$x,$y] 1
+    }
+#Gui Step(158)===>Listbox .fselect.fsbox.lf.pane.2.filelist.listbox <Button-1> FFT.do
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 158:  (Listbox) <Button-1>\
+ FFT.do} .fselect.fsbox.lf.pane.2.filelist.listbox } 
+_tixRecordFlags <1> % 10375 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 0 813937 ?? 14 23 ?? ?? 0 ?? ?? 0x0000f3 00000000 4 .fselect.fsbox.lf.pane.2.filelist.listbox 751 307; 
+	if {[string is true -strict [.fselect.fsbox.lf.pane.2.filelist.listbox cget -takefocus]]} {
+	    focus .fselect.fsbox.lf.pane.2.filelist.listbox
+	}
+	tixScrolledListBox:Browse [tixGetMegaWidget .fselect.fsbox.lf.pane.2.filelist.listbox]
+    ; _tixDeleteFlags;
+#Gui Step(159)===>Listbox .fselect.fsbox.lf.pane.2.filelist.listbox <ButtonRelease-1> FFT.do
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 159:  (Listbox) <ButtonRelease-1>\
+ FFT.do} .fselect.fsbox.lf.pane.2.filelist.listbox } 
+_tixRecordFlags <ButtonRelease-1> % 10419 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 256 814000 ?? 14 23 ?? ?? 0 ?? ?? 0x0000f3 00000000 5 .fselect.fsbox.lf.pane.2.filelist.listbox 751 307; 
+	if {[set [tixGetMegaWidget .fselect.fsbox.lf.pane.2.filelist.listbox](-state)] eq "disabled"} {
+	    break
+	}
+    ; _tixDeleteFlags;
+#Gui Step(160)===>Listbox .fselect.fsbox.lf.pane.2.filelist.listbox <ButtonRelease-1> FFT.do
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 160:  (Listbox) <ButtonRelease-1>\
+ FFT.do} .fselect.fsbox.lf.pane.2.filelist.listbox } 
+     tk::CancelRepeat
+    .fselect.fsbox.lf.pane.2.filelist.listbox activate @14,23
+#Gui Step(161)===>Listbox .fselect.fsbox.lf.pane.2.filelist.listbox <ButtonRelease-1> FFT.do
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 161:  (Listbox) <ButtonRelease-1>\
+ FFT.do} .fselect.fsbox.lf.pane.2.filelist.listbox } 
+_tixRecordFlags <ButtonRelease-1> % 10419 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 256 814000 ?? 14 23 ?? ?? 0 ?? ?? 0x0000f3 00000000 5 .fselect.fsbox.lf.pane.2.filelist.listbox 751 307; 
+	tixScrolledListBox:Browse [tixGetMegaWidget .fselect.fsbox.lf.pane.2.filelist.listbox]
+    ; _tixDeleteFlags;
+#Gui Step(162)===>Listbox .fselect.fsbox.lf.pane.2.filelist.listbox <Double-Button-1> {}
+_tixRecordFlags <Double-1> % 10434 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 0 814062 ?? 14 23 ?? ?? 0 ?? ?? 0x0000f3 00000000 4 .fselect.fsbox.lf.pane.2.filelist.listbox 751 307; 
+	if {[set [tixGetMegaWidget .fselect.fsbox.lf.pane.2.filelist.listbox](-state)] eq "disabled"} {
+	    break
+	}
+    ; _tixDeleteFlags;
+#Gui Step(163)===>Listbox .fselect.fsbox.lf.pane.2.filelist.listbox <Double-Button-1> {}
+     # Empty script
+#Gui Step(164)===>Listbox .fselect.fsbox.lf.pane.2.filelist.listbox <Double-Button-1> {}
+_tixRecordFlags <Double-1> % 10434 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 0 814062 ?? 14 23 ?? ?? 0 ?? ?? 0x0000f3 00000000 4 .fselect.fsbox.lf.pane.2.filelist.listbox 751 307; 
+	tixScrolledListBox:Invoke [tixGetMegaWidget .fselect.fsbox.lf.pane.2.filelist.listbox]
+    ; _tixDeleteFlags;
+#Gui Step(165)===>Listbox .fselect.fsbox.lf.pane.2.filelist.listbox <ButtonRelease-1> FFT.do
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 165:  (Listbox) <ButtonRelease-1>\
+ FFT.do} .fselect.fsbox.lf.pane.2.filelist.listbox } 
+_tixRecordFlags <ButtonRelease-1> % 10434 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 256 814171 ?? 14 23 ?? ?? 0 ?? ?? 0x0000f3 00000000 5 .fselect.fsbox.lf.pane.2.filelist.listbox 751 307; 
+	if {[set [tixGetMegaWidget .fselect.fsbox.lf.pane.2.filelist.listbox](-state)] eq "disabled"} {
+	    break
+	}
+    ; _tixDeleteFlags;
+#Gui Step(166)===>Listbox .fselect.fsbox.lf.pane.2.filelist.listbox <ButtonRelease-1> FFT.do
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 166:  (Listbox) <ButtonRelease-1>\
+ FFT.do} .fselect.fsbox.lf.pane.2.filelist.listbox } 
+     tk::CancelRepeat
+    .fselect.fsbox.lf.pane.2.filelist.listbox activate @14,23
+#Gui Step(167)===>Listbox .fselect.fsbox.lf.pane.2.filelist.listbox <ButtonRelease-1> FFT.do
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 167:  (Listbox) <ButtonRelease-1>\
+ FFT.do} .fselect.fsbox.lf.pane.2.filelist.listbox } 
+_tixRecordFlags <ButtonRelease-1> % 10434 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 256 814171 ?? 14 23 ?? ?? 0 ?? ?? 0x0000f3 00000000 5 .fselect.fsbox.lf.pane.2.filelist.listbox 751 307; 
+	tixScrolledListBox:Browse [tixGetMegaWidget .fselect.fsbox.lf.pane.2.filelist.listbox]
+    ; _tixDeleteFlags;
+#Gui Step(168)===>Tk . <Configure> {0 23 1536 801}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 168:  (Tk) <Configure>\
+ 0 23 1536 801} . } 
+ guiWinConfig . 1536 801 0 23 
+#Gui Step(169)===>Tk . <Configure> {0 23 1536 801}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 169:  (Tk) <Configure>\
+ 0 23 1536 801} . } 
+ guiWinConfig . 1536 801 0 23 
+#Gui Step(170)===>Tk . <Configure> {1 1 180 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 170:  (Tk) <Configure>\
+ 1 1 180 21} . } 
+ guiWinConfig .b.frame.lab 180 21 1 1 
+#Gui Step(171)===>Tk . <Configure> {1 1 228 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 171:  (Tk) <Configure>\
+ 1 1 228 21} . } 
+ guiWinConfig .b.frame.lab 228 21 1 1 
+#Gui Step(172)===>TixHList .a.pane.f1.middle.nb.nbframe.hier.golden.fm.tree.f1.hlist <Leave> {}
+callback Gui_hlist_leave .a.pane.f1.middle.nb.nbframe.hier.golden.fm.tree.f1.hlist
+#Gui Step(173)===>Tk . <Configure> {1 1 168 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 173:  (Tk) <Configure>\
+ 1 1 168 21} . } 
+ guiWinConfig .b.frame.lab 168 21 1 1 
+#Gui Step(174)===>Tk . <Configure> {1 1 229 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 174:  (Tk) <Configure>\
+ 1 1 229 21} . } 
+ guiWinConfig .b.frame.lab 229 21 1 1 
+#Gui Step(175)===>Tk . <Configure> {0 0 1534 463}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 175:  (Tk) <Configure>\
+ 0 0 1534 463} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe 1534 463 0 0 
+#Gui Step(176)===>Frame .a.pane.f1.middle.nb.nbframe.hier <Configure> {{} {} {} {}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 176:  (Frame) <Configure>\
+ {} {} {} {}} .a.pane.f1.middle.nb.nbframe.hier } 
+tixVStack:ClientGeomProc .a.pane.f1.middle.nb -configure .a.pane.f1.middle.nb.nbframe.hier
+#Gui Step(177)===>Tk . <Configure> {8 47 1518 408}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 177:  (Tk) <Configure>\
+ 8 47 1518 408} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.hier 1518 408 8 47 
+#Gui Step(178)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 178:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list 1 1 0 0 
+#Gui Step(179)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 179:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.listbox 1 1 0 0 
+#Gui Step(180)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 180:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_r.list 1 1 0 0 
+#Gui Step(181)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 181:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_r.list.listbox 1 1 0 0 
+#Gui Step(182)===>Tk . <Configure> {0 0 1534 463}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 182:  (Tk) <Configure>\
+ 0 0 1534 463} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe 1534 463 0 0 
+#Gui Step(183)===>Frame .a.pane.f1.middle.nb.nbframe.hier <Configure> {{} {} {} {}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 183:  (Frame) <Configure>\
+ {} {} {} {}} .a.pane.f1.middle.nb.nbframe.hier } 
+tixVStack:ClientGeomProc .a.pane.f1.middle.nb -configure .a.pane.f1.middle.nb.nbframe.hier
+#Gui Step(184)===>Tk . <Configure> {8 47 1518 408}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 184:  (Tk) <Configure>\
+ 8 47 1518 408} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.hier 1518 408 8 47 
+#Gui Step(185)===>Tk . <Configure> {0 0 1534 463}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 185:  (Tk) <Configure>\
+ 0 0 1534 463} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe 1534 463 0 0 
+#Gui Step(186)===>Frame .a.pane.f1.middle.nb.nbframe.hier <Configure> {{} {} {} {}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 186:  (Frame) <Configure>\
+ {} {} {} {}} .a.pane.f1.middle.nb.nbframe.hier } 
+tixVStack:ClientGeomProc .a.pane.f1.middle.nb -configure .a.pane.f1.middle.nb.nbframe.hier
+#Gui Step(187)===>Tk . <Configure> {8 47 1518 408}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 187:  (Tk) <Configure>\
+ 8 47 1518 408} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.hier 1518 408 8 47 
+#Gui Step(188)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 188:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.listbox 1 1 0 0 
+#Gui Step(189)===>Tk . <Configure> {1 0 13 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 189:  (Tk) <Configure>\
+ 1 0 13 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.vsb 13 1 1 0 
+#Gui Step(190)===>Tk . <Configure> {0 0 1536 465}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 190:  (Tk) <Configure>\
+ 0 0 1536 465} . } 
+ guiWinConfig .a.pane.f1 1536 465 0 0 
+#Gui Step(191)===>Tk . <Configure> {0 465 1536 233}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 191:  (Tk) <Configure>\
+ 0 465 1536 233} . } 
+ guiWinConfig .a.pane.f2 1536 233 0 465 
+#Gui Step(192)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 192:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.listbox 1 1 0 0 
+#Gui Step(193)===>Tk . <Configure> {1 0 13 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 193:  (Tk) <Configure>\
+ 1 0 13 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.vsb 13 1 1 0 
+#Gui Step(194)===>Tk . <Configure> {0 1 1 13}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 194:  (Tk) <Configure>\
+ 0 1 1 13} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.hsb 1 13 0 1 
+#Gui Step(195)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 195:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list 1 1 0 0 
+#Gui Step(196)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 196:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.listbox 1 1 0 0 
+#Gui Step(197)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 197:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_r.list 1 1 0 0 
+#Gui Step(198)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 198:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_r.list.listbox 1 1 0 0 
+#Gui Step(199)===>Tk . <Configure> {0 0 1534 463}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 199:  (Tk) <Configure>\
+ 0 0 1534 463} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe 1534 463 0 0 
+#Gui Step(200)===>Frame .a.pane.f1.middle.nb.nbframe.hier <Configure> {{} {} {} {}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 200:  (Frame) <Configure>\
+ {} {} {} {}} .a.pane.f1.middle.nb.nbframe.hier } 
+tixVStack:ClientGeomProc .a.pane.f1.middle.nb -configure .a.pane.f1.middle.nb.nbframe.hier
+#Gui Step(201)===>Tk . <Configure> {8 47 1518 408}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 201:  (Tk) <Configure>\
+ 8 47 1518 408} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.hier 1518 408 8 47 
+#Gui Step(202)===>Tk . <Configure> {0 0 1534 463}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 202:  (Tk) <Configure>\
+ 0 0 1534 463} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe 1534 463 0 0 
+#Gui Step(203)===>Frame .a.pane.f1.middle.nb.nbframe.hier <Configure> {{} {} {} {}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 203:  (Frame) <Configure>\
+ {} {} {} {}} .a.pane.f1.middle.nb.nbframe.hier } 
+tixVStack:ClientGeomProc .a.pane.f1.middle.nb -configure .a.pane.f1.middle.nb.nbframe.hier
+#Gui Step(204)===>Tk . <Configure> {8 47 1518 408}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 204:  (Tk) <Configure>\
+ 8 47 1518 408} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.hier 1518 408 8 47 
+#Gui Step(205)===>Tk . <Configure> {0 0 1536 465}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 205:  (Tk) <Configure>\
+ 0 0 1536 465} . } 
+ guiWinConfig .a.pane.f1 1536 465 0 0 
+#Gui Step(206)===>Tk . <Configure> {0 465 1536 233}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 206:  (Tk) <Configure>\
+ 0 465 1536 233} . } 
+ guiWinConfig .a.pane.f2 1536 233 0 465 
+#Gui Step(207)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 207:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.listbox 1 1 0 0 
+#Gui Step(208)===>Tk . <Configure> {1 0 13 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 208:  (Tk) <Configure>\
+ 1 0 13 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.vsb 13 1 1 0 
+#Gui Step(209)===>Tk . <Configure> {0 0 1536 465}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 209:  (Tk) <Configure>\
+ 0 0 1536 465} . } 
+ guiWinConfig .a.pane.f1 1536 465 0 0 
+#Gui Step(210)===>Tk . <Configure> {0 465 1536 233}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 210:  (Tk) <Configure>\
+ 0 465 1536 233} . } 
+ guiWinConfig .a.pane.f2 1536 233 0 465 
+#Gui Step(211)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 211:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.listbox 1 1 0 0 
+#Gui Step(212)===>Tk . <Configure> {1 0 13 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 212:  (Tk) <Configure>\
+ 1 0 13 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.vsb 13 1 1 0 
+#Gui Step(213)===>Tk . <Configure> {0 1 1 13}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 213:  (Tk) <Configure>\
+ 0 1 1 13} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.hsb 1 13 0 1 
+#Gui Step(214)===>Tk . <Configure> {1 1 172 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 214:  (Tk) <Configure>\
+ 1 1 172 21} . } 
+ guiWinConfig .b.frame.lab 172 21 1 1 
+#Gui Step(215)===>Tk . <Configure> {1 1 229 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 215:  (Tk) <Configure>\
+ 1 1 229 21} . } 
+ guiWinConfig .b.frame.lab 229 21 1 1 
+#Gui Step(216)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 216:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list 1 1 0 0 
+#Gui Step(217)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 217:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.listbox 1 1 0 0 
+#Gui Step(218)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 218:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_r.list 1 1 0 0 
+#Gui Step(219)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 219:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_r.list.listbox 1 1 0 0 
+#Gui Step(220)===>Tk . <Configure> {0 0 1534 463}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 220:  (Tk) <Configure>\
+ 0 0 1534 463} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe 1534 463 0 0 
+#Gui Step(221)===>Frame .a.pane.f1.middle.nb.nbframe.hier <Configure> {{} {} {} {}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 221:  (Frame) <Configure>\
+ {} {} {} {}} .a.pane.f1.middle.nb.nbframe.hier } 
+tixVStack:ClientGeomProc .a.pane.f1.middle.nb -configure .a.pane.f1.middle.nb.nbframe.hier
+#Gui Step(222)===>Tk . <Configure> {8 47 1518 408}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 222:  (Tk) <Configure>\
+ 8 47 1518 408} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.hier 1518 408 8 47 
+#Gui Step(223)===>Tk . <Configure> {0 0 1534 463}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 223:  (Tk) <Configure>\
+ 0 0 1534 463} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe 1534 463 0 0 
+#Gui Step(224)===>Frame .a.pane.f1.middle.nb.nbframe.hier <Configure> {{} {} {} {}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 224:  (Frame) <Configure>\
+ {} {} {} {}} .a.pane.f1.middle.nb.nbframe.hier } 
+tixVStack:ClientGeomProc .a.pane.f1.middle.nb -configure .a.pane.f1.middle.nb.nbframe.hier
+#Gui Step(225)===>Tk . <Configure> {8 47 1518 408}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 225:  (Tk) <Configure>\
+ 8 47 1518 408} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.hier 1518 408 8 47 
+#Gui Step(226)===>Tk . <Configure> {0 0 1536 465}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 226:  (Tk) <Configure>\
+ 0 0 1536 465} . } 
+ guiWinConfig .a.pane.f1 1536 465 0 0 
+#Gui Step(227)===>Tk . <Configure> {0 465 1536 233}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 227:  (Tk) <Configure>\
+ 0 465 1536 233} . } 
+ guiWinConfig .a.pane.f2 1536 233 0 465 
+#Gui Step(228)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 228:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.listbox 1 1 0 0 
+#Gui Step(229)===>Tk . <Configure> {1 0 13 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 229:  (Tk) <Configure>\
+ 1 0 13 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.vsb 13 1 1 0 
+#Gui Step(230)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 230:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_r.list.listbox 1 1 0 0 
+#Gui Step(231)===>Tk . <Configure> {1 0 13 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 231:  (Tk) <Configure>\
+ 1 0 13 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_r.list.vsb 13 1 1 0 
+#Gui Step(232)===>Tk . <Configure> {0 0 1536 465}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 232:  (Tk) <Configure>\
+ 0 0 1536 465} . } 
+ guiWinConfig .a.pane.f1 1536 465 0 0 
+#Gui Step(233)===>Tk . <Configure> {0 465 1536 233}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 233:  (Tk) <Configure>\
+ 0 465 1536 233} . } 
+ guiWinConfig .a.pane.f2 1536 233 0 465 
+#Gui Step(234)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 234:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_r.list.listbox 1 1 0 0 
+#Gui Step(235)===>Tk . <Configure> {1 0 13 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 235:  (Tk) <Configure>\
+ 1 0 13 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_r.list.vsb 13 1 1 0 
+#Gui Step(236)===>Tk . <Configure> {0 1 1 13}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 236:  (Tk) <Configure>\
+ 0 1 1 13} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_r.list.hsb 1 13 0 1 
+#Gui Step(237)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 237:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.listbox 1 1 0 0 
+#Gui Step(238)===>Tk . <Configure> {1 0 13 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 238:  (Tk) <Configure>\
+ 1 0 13 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.vsb 13 1 1 0 
+#Gui Step(239)===>Tk . <Configure> {0 1 1 13}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 239:  (Tk) <Configure>\
+ 0 1 1 13} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.hsb 1 13 0 1 
+#Gui Step(240)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 240:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list 1 1 0 0 
+#Gui Step(241)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 241:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.listbox 1 1 0 0 
+#Gui Step(242)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 242:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_r.list 1 1 0 0 
+#Gui Step(243)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 243:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_r.list.listbox 1 1 0 0 
+#Gui Step(244)===>Tk . <Configure> {0 0 1534 463}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 244:  (Tk) <Configure>\
+ 0 0 1534 463} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe 1534 463 0 0 
+#Gui Step(245)===>Frame .a.pane.f1.middle.nb.nbframe.hier <Configure> {{} {} {} {}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 245:  (Frame) <Configure>\
+ {} {} {} {}} .a.pane.f1.middle.nb.nbframe.hier } 
+tixVStack:ClientGeomProc .a.pane.f1.middle.nb -configure .a.pane.f1.middle.nb.nbframe.hier
+#Gui Step(246)===>Tk . <Configure> {8 47 1518 408}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 246:  (Tk) <Configure>\
+ 8 47 1518 408} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.hier 1518 408 8 47 
+#Gui Step(247)===>Tk . <Configure> {0 0 1534 463}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 247:  (Tk) <Configure>\
+ 0 0 1534 463} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe 1534 463 0 0 
+#Gui Step(248)===>Frame .a.pane.f1.middle.nb.nbframe.hier <Configure> {{} {} {} {}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 248:  (Frame) <Configure>\
+ {} {} {} {}} .a.pane.f1.middle.nb.nbframe.hier } 
+tixVStack:ClientGeomProc .a.pane.f1.middle.nb -configure .a.pane.f1.middle.nb.nbframe.hier
+#Gui Step(249)===>Tk . <Configure> {8 47 1518 408}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 249:  (Tk) <Configure>\
+ 8 47 1518 408} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.hier 1518 408 8 47 
+#Gui Step(250)===>Tk . <Configure> {0 0 1536 465}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 250:  (Tk) <Configure>\
+ 0 0 1536 465} . } 
+ guiWinConfig .a.pane.f1 1536 465 0 0 
+#Gui Step(251)===>Tk . <Configure> {0 465 1536 233}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 251:  (Tk) <Configure>\
+ 0 465 1536 233} . } 
+ guiWinConfig .a.pane.f2 1536 233 0 465 
+#Gui Step(252)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 252:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.listbox 1 1 0 0 
+#Gui Step(253)===>Tk . <Configure> {1 0 13 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 253:  (Tk) <Configure>\
+ 1 0 13 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.vsb 13 1 1 0 
+#Gui Step(254)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 254:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_r.list.listbox 1 1 0 0 
+#Gui Step(255)===>Tk . <Configure> {1 0 13 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 255:  (Tk) <Configure>\
+ 1 0 13 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_r.list.vsb 13 1 1 0 
+#Gui Step(256)===>Tk . <Configure> {0 0 1536 465}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 256:  (Tk) <Configure>\
+ 0 0 1536 465} . } 
+ guiWinConfig .a.pane.f1 1536 465 0 0 
+#Gui Step(257)===>Tk . <Configure> {0 465 1536 233}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 257:  (Tk) <Configure>\
+ 0 465 1536 233} . } 
+ guiWinConfig .a.pane.f2 1536 233 0 465 
+#Gui Step(258)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 258:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_r.list.listbox 1 1 0 0 
+#Gui Step(259)===>Tk . <Configure> {1 0 13 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 259:  (Tk) <Configure>\
+ 1 0 13 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_r.list.vsb 13 1 1 0 
+#Gui Step(260)===>Tk . <Configure> {0 1 1 13}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 260:  (Tk) <Configure>\
+ 0 1 1 13} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_r.list.hsb 1 13 0 1 
+#Gui Step(261)===>Tk . <Configure> {0 0 1 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 261:  (Tk) <Configure>\
+ 0 0 1 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.listbox 1 1 0 0 
+#Gui Step(262)===>Tk . <Configure> {1 0 13 1}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 262:  (Tk) <Configure>\
+ 1 0 13 1} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.vsb 13 1 1 0 
+#Gui Step(263)===>Tk . <Configure> {0 1 1 13}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 263:  (Tk) <Configure>\
+ 0 1 1 13} . } 
+ guiWinConfig .a.pane.f1.middle.nb.nbframe.design.sw1.bkd_g.list.hsb 1 13 0 1 
+#Gui Step(264)===>TixHList .a.pane.f1.middle.nb.nbframe.hier.golden.fm.tree.f1.hlist <Leave> {}
+callback Gui_hlist_leave .a.pane.f1.middle.nb.nbframe.hier.golden.fm.tree.f1.hlist
+#Gui Step(265)===>TixHList .a.pane.f1.middle.nb.nbframe.hier.revised.fm.tree.f1.hlist <Leave> {}
+callback Gui_hlist_leave .a.pane.f1.middle.nb.nbframe.hier.revised.fm.tree.f1.hlist
+#Gui Step(266)===>Button .v_menu.logo <Enter> {}
+         if { [ .v_menu.logo cget -state ] == "normal" } {
+            .v_menu.logo configure -relief groove
+        }
+    
+#Gui Step(267)===>Button .v_menu.logo <Enter> {}
+     tk::ButtonEnter .v_menu.logo
+#Gui Step(268)===>Button .v_menu.logo <Leave> {}
+ .v_menu.logo configure -relief flat 
+#Gui Step(269)===>Button .v_menu.logo <Leave> {}
+     tk::ButtonLeave .v_menu.logo
+#Gui Step(270)===>Tk . <Configure> {0 0 1536 801}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 270:  (Tk) <Configure>\
+ 0 0 1536 801} . } 
+ guiWinConfig . 1536 801 0 0 
+#Gui Step(271)===>Tk . <Configure> {0 0 1536 801}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 271:  (Tk) <Configure>\
+ 0 0 1536 801} . } 
+ guiWinConfig . 1536 801 0 0 
+#Gui Step(272)===>TixHList .a.pane.f1.middle.nb.nbframe.hier.revised.fm.tree.f1.hlist <Leave> {}
+callback Gui_hlist_leave .a.pane.f1.middle.nb.nbframe.hier.revised.fm.tree.f1.hlist
+#Gui Step(273)===>TixHList .a.pane.f1.middle.nb.nbframe.hier.revised.fm.tree.f1.hlist <Leave> {}
+callback Gui_hlist_leave .a.pane.f1.middle.nb.nbframe.hier.revised.fm.tree.f1.hlist
+#Gui Step(274)===>TixHList .a.pane.f1.middle.nb.nbframe.hier.revised.fm.tree.f1.hlist <Leave> {}
+callback Gui_hlist_leave .a.pane.f1.middle.nb.nbframe.hier.revised.fm.tree.f1.hlist
+#Gui Step(275)===>Tk . <Configure> {1 1 140 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 275:  (Tk) <Configure>\
+ 1 1 140 21} . } 
+ guiWinConfig .b.frame.lab 140 21 1 1 
+#Gui Step(276)===>Tk . <Configure> {1329 4 203 23}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 276:  (Tk) <Configure>\
+ 1329 4 203 23} . } 
+ guiWinConfig .b.met 203 23 1329 4 
+#Gui Step(277)===>Tk . <Configure> {4 4 1317 23}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 277:  (Tk) <Configure>\
+ 4 4 1317 23} . } 
+ guiWinConfig .b.frame 1317 23 4 4 
+#Gui Step(278)===>Tk . <Configure> {1 1 201 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 278:  (Tk) <Configure>\
+ 1 1 201 21} . } 
+ guiWinConfig .b.met.canvas 201 21 1 1 
+#Gui Step(279)===>Tk . <Configure> {1 1 129 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 279:  (Tk) <Configure>\
+ 1 1 129 21} . } 
+ guiWinConfig .b.frame.lab 129 21 1 1 
+#Gui Step(280)===>Tk . <Configure> {1 1 147 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 280:  (Tk) <Configure>\
+ 1 1 147 21} . } 
+ guiWinConfig .b.frame.lab 147 21 1 1 
+#Gui Step(281)===>Tk . <Configure> {1 1 146 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 281:  (Tk) <Configure>\
+ 1 1 146 21} . } 
+ guiWinConfig .b.frame.lab 146 21 1 1 
+#Gui Step(282)===>Tk . <Configure> {1 1 135 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 282:  (Tk) <Configure>\
+ 1 1 135 21} . } 
+ guiWinConfig .b.frame.lab 135 21 1 1 
+#Gui Step(283)===>Tk . <Configure> {1 1 147 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 283:  (Tk) <Configure>\
+ 1 1 147 21} . } 
+ guiWinConfig .b.frame.lab 147 21 1 1 
+#Gui Step(284)===>Tk . <Configure> {1 1 219 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 284:  (Tk) <Configure>\
+ 1 1 219 21} . } 
+ guiWinConfig .b.frame.lab 219 21 1 1 
+#Gui Step(285)===>Tk . <Configure> {1 1 91 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 285:  (Tk) <Configure>\
+ 1 1 91 21} . } 
+ guiWinConfig .b.frame.lab 91 21 1 1 
+#Gui Step(286)===>Tk . <Configure> {1 1 341 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 286:  (Tk) <Configure>\
+ 1 1 341 21} . } 
+ guiWinConfig .b.frame.lab 341 21 1 1 
+#Gui Step(287)===>Tk . <Configure> {1 1 349 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 287:  (Tk) <Configure>\
+ 1 1 349 21} . } 
+ guiWinConfig .b.frame.lab 349 21 1 1 
+#Gui Step(288)===>Tk . <Configure> {1 1 357 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 288:  (Tk) <Configure>\
+ 1 1 357 21} . } 
+ guiWinConfig .b.frame.lab 357 21 1 1 
+#Gui Step(289)===>Tk . <Configure> {1 1 365 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 289:  (Tk) <Configure>\
+ 1 1 365 21} . } 
+ guiWinConfig .b.frame.lab 365 21 1 1 
+#Gui Step(290)===>Tk . <Configure> {1 1 373 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 290:  (Tk) <Configure>\
+ 1 1 373 21} . } 
+ guiWinConfig .b.frame.lab 373 21 1 1 
+#Gui Step(291)===>Tk . <Configure> {1 1 381 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 291:  (Tk) <Configure>\
+ 1 1 381 21} . } 
+ guiWinConfig .b.frame.lab 381 21 1 1 
+#Gui Step(292)===>Tk . <Configure> {1 1 104 21}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 292:  (Tk) <Configure>\
+ 1 1 104 21} . } 
+ guiWinConfig .b.frame.lab 104 21 1 1 
+#Gui Step(293)===>Tk . <Configure> {1 20 44 19}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 293:  (Tk) <Configure>\
+ 1 20 44 19} . } 
+ guiWinConfig .a.pane.f3.command.text.text.promt2 44 19 1 20 
+#Gui Step(294)===>TixHList .a.pane.f1.middle.nb.nbframe.hier.golden.fm.tree.f1.hlist <Leave> {}
+callback Gui_hlist_leave .a.pane.f1.middle.nb.nbframe.hier.golden.fm.tree.f1.hlist
+#Gui Step(295)===>TixHList .a.pane.f1.middle.nb.nbframe.hier.golden.fm.tree.f1.hlist <Leave> {}
+callback Gui_hlist_leave .a.pane.f1.middle.nb.nbframe.hier.golden.fm.tree.f1.hlist
+#Gui Step(296)===>TixHList .a.pane.f1.middle.nb.nbframe.hier.revised.fm.tree.f1.hlist <Leave> {}
+callback Gui_hlist_leave .a.pane.f1.middle.nb.nbframe.hier.revised.fm.tree.f1.hlist
+#Gui Step(297)===>TixHList .a.pane.f1.middle.nb.nbframe.hier.golden.fm.tree.f1.hlist <Leave> {}
+callback Gui_hlist_leave .a.pane.f1.middle.nb.nbframe.hier.golden.fm.tree.f1.hlist
+#Gui Step(298)===>TixHList .a.pane.f1.middle.nb.nbframe.hier.revised.fm.tree.f1.hlist <Leave> {}
+callback Gui_hlist_leave .a.pane.f1.middle.nb.nbframe.hier.revised.fm.tree.f1.hlist
+#Gui Step(299)===>Scrollbar .a.pane.f2.mesg.text.vsb <Enter> {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.a.pane.f2.mesg.text.vsb cget -activebackground]
+	.a.pane.f2.mesg.text.vsb configure -activebackground [.a.pane.f2.mesg.text.vsb cget -background]
+    }
+    .a.pane.f2.mesg.text.vsb activate [.a.pane.f2.mesg.text.vsb identify 12 177]
+#Gui Step(300)===>Scrollbar .a.pane.f2.mesg.text.vsb <Leave> {}
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.a.pane.f2.mesg.text.vsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .a.pane.f2.mesg.text.vsb activate {}
+#Gui Step(301)===>Tk . <Configure> {0 0 1536 801}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 301:  (Tk) <Configure>\
+ 0 0 1536 801} . } 
+ guiWinConfig . 1536 801 0 0 
+#Gui Step(302)===>Tk . <Configure> {0 23 1536 801}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 302:  (Tk) <Configure>\
+ 0 23 1536 801} . } 
+ guiWinConfig . 1536 801 0 23 
+#Gui Step(303)===>Tk . <Configure> {0 0 1536 801}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 303:  (Tk) <Configure>\
+ 0 0 1536 801} . } 
+ guiWinConfig . 1536 801 0 0 
+#Gui Step(304)===>Tk . <Configure> {0 23 1536 801}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 304:  (Tk) <Configure>\
+ 0 23 1536 801} . } 
+ guiWinConfig . 1536 801 0 23 
+#Gui Step(305)===>Tk . <Configure> {8 31 1536 801}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 305:  (Tk) <Configure>\
+ 8 31 1536 801} . } 
+ guiWinConfig . 1536 801 8 31 
+#Gui Step(306)===>Tk . <Configure> {0 23 1536 801}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 306:  (Tk) <Configure>\
+ 0 23 1536 801} . } 
+ guiWinConfig . 1536 801 0 23 
+#Gui Step(307)===>TixHList .a.pane.f1.middle.nb.nbframe.hier.revised.fm.tree.f1.hlist <Leave> {}
+callback Gui_hlist_leave .a.pane.f1.middle.nb.nbframe.hier.revised.fm.tree.f1.hlist
+#Gui Step(308)===>TixHList .a.pane.f1.middle.nb.nbframe.hier.golden.fm.tree.f1.hlist <Leave> {}
+callback Gui_hlist_leave .a.pane.f1.middle.nb.nbframe.hier.golden.fm.tree.f1.hlist

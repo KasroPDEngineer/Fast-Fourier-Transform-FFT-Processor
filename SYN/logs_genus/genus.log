@@ -1,0 +1,22 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2023 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[11:23:22.086873] Configured Lic search path (21.01-s002): 5280@vlsicad
+
+Version: 21.18-s082_1, built Tue Jul 18 10:08:41 PDT 2023
+Options: 
+Date:    Wed Oct 22 11:23:22 2025
+Host:    vlsicad (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (12cores*48cpus*2physical cpus*Intel(R) Xeon(R) Silver 4116 CPU @ 2.10GHz 16896KB) (263377468KB)
+PID:     40416
+OS:      Red Hat Enterprise Linux Server release 7.9 (Maipo)
+
+Checking out license: Genus_Synthesis
+License 'Genus_Synthesis' (main version: 21.1, alternate version: 21.1) checkout failed.
+Checking out license: Virtuoso_Digital_Implem
+License 'Virtuoso_Digital_Implem' (main version: 21.1, alternate version: 21.1) checkout failed.
+Checking out license: Virtuoso_Digital_Implem_XL
+License 'Virtuoso_Digital_Implem_XL' (main version: 21.1, alternate version: 21.1) checkout failed.
+Cannot obtain 'Genus_Synthesis' license.
+Abnormal exit.

@@ -1,0 +1,68 @@
+catch { setDesignMode -process 45 }
+catch { setDesignMode -topRoutingLayer Metal5 }
+catch { setAnalysisMode -analysisType onChipVariation }
+catch { setAnalysisMode -checkType setup }
+catch { setAnalysisMode -clkSrcPath true }
+catch { setAnalysisMode -clockPropagation sdcControl }
+catch { setAnalysisMode -cppr both }
+catch { setAnalysisMode -timeBorrowing false }
+catch { setOptMode -opt_view_pruning_setup_views_active_list { view_fft_slow } }
+catch { setOptMode -opt_new_inst_prefix cts }
+catch { setOptMode -opt_view_pruning_setup_views_persistent_list { view_fft_slow} }
+catch { setOptMode -opt_view_pruning_tdgr_setup_views_persistent_list { view_fft_slow} }
+catch { setOptMode -opt_drv_margin 0 }
+catch { setOptMode -opt_drv true }
+catch { setOptMode -opt_fix_fanout_load true }
+catch { setOptMode -opt_post_route_fix_glitch true }
+catch { setOptMode -opt_max_length 500 }
+catch { setOptMode -opt_resize_flip_flops true }
+catch { setOptMode -opt_preserve_all_sequential false }
+catch { setOptMode -opt_setup_target_slack 0 }
+catch { setOptMode -opt_remove_redundant_insts false }
+catch { setOptMode -opt_skew false }
+catch { setOptMode -opt_skew_pre_cts false }
+catch { setPathGroupOptions default -effortLevel low }
+catch { setPathGroupOptions reg2reg -effortLevel high }
+catch { setPathGroupOptions reg2out -effortLevel high }
+catch { setPathGroupOptions in2reg -effortLevel high }
+catch { setPathGroupOptions in2out -effortLevel high }
+catch { setExtractRCMode  -engine preRoute -total_c_th 0 -relative_c_th 1 -coupling_c_th 0.1 }
+catch { set_ccopt_mode -integration native }
+catch { set_ccopt_mode -is_mode_set_route_top_mask false }
+catch { set_ccopt_mode -is_mode_set_route_top_preferred_extra_space false }
+catch {setNanoRouteMode -quiet -extractThirdPartyCompatible false}
+catch {setNanoRouteMode -quiet -grouteExpTdStdDelay 38.800000}
+catch {setNanoRouteMode -quiet -routeExpDesignModeTopRoutingLayer 5}
+catch {setNanoRouteMode -quiet -routeTopRoutingLayer 5}
+
+catch { setPlaceMode -place_global_clock_gate_aware true }
+catch { setPlaceMode -place_global_cong_effort high }
+catch { setPlaceMode -place_global_ignore_scan true }
+catch { setPlaceMode -place_global_ignore_spare true }
+catch { setPlaceMode -place_global_max_density 0.9 }
+catch { setPlaceMode -place_global_module_aware_spare false }
+catch { setPlaceMode -place_global_place_io_pins false }
+catch { setPlaceMode -place_global_reorder_scan true }
+catch { setPlaceMode -place_global_uniform_density true }
+catch { setPlaceMode -place_opt_run_global_place full }
+catch { setPlaceMode -softGuide true }
+catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepInstInSdc false -keepFlatten true }
+catch { set_ccopt_mode -integration native }
+catch { set_ccopt_mode -is_mode_set_route_top_mask false }
+catch { set_ccopt_mode -is_mode_set_route_top_preferred_extra_space false }
+catch { setActiveLogicViewMode -keepHighFanoutCriticalInsts false }
+catch { setDelayCalMode -enable_high_fanout true }
+catch { setDelayCalMode -eng_enablePrePlacedFlow false }
+catch { setDelayCalMode -engine aae }
+catch { setDelayCalMode -ignoreNetLoad false }
+catch { setDelayCalMode -socv_accuracy_mode low }
+catch { setPinAssignMode -maxLayer 5 }
+catch { setImportMode -config true }
+catch { setImportMode -discardFloatingVNets false }
+catch { setImportMode -keepEmptyModule true }
+catch { setSIMode -separate_delta_delay_on_data true }
+catch { setRouteMode -earlyGlobalMaxRouteLayer 5 }
+catch { setFPlanMode -defaultTechSite CoreSite }
+catch { setFPlanMode -maxIoHeight false }
+catch { setFPlanMode -place_check_ignore_fixed_cell_list {} }
+catch { setFPlanMode -powerRailLayer {} }
